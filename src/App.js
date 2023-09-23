@@ -7,12 +7,13 @@ function App() {
   const opsSym = ["+", "-", "*", "/"];
   
   const inputSet = (tempVal) => {//for read input from button
-    /*if(ioRef === '' && opsSym.includes(tempVal) || opsSym.includes(ioRef.slice(-1)) && opsSym.includes(tempVal)){
+    if(/*ioRef === '' && opsSym.includes(tempVal) ||*/ opsSym.includes(ioRef.slice(-1)))/*)*/{
       return;
-    }*/
+    }
 
     console.log("is it in the operation set?: " + opsSym.includes(tempVal));
     setIoRef(ioRef + tempVal.target.value)
+    console.log("is it in the operation set?: " + opsSym.includes(tempVal));
     console.log("can it detect from the string?: " + opsSym.includes(ioRef.slice(-1)));
   };
 
