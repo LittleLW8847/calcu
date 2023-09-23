@@ -4,9 +4,16 @@ import './App.css';
 function App() {
 
   const [ioRef, setIoRef] = useState(""); //input output
+  const opsSym = ["+", "-", "*", "/"];
   
   const inputSet = (tempVal) => {//for read input from button
+    /*if(ioRef === '' && opsSym.includes(tempVal) || opsSym.includes(ioRef.slice(-1)) && opsSym.includes(tempVal)){
+      return;
+    }*/
+
+    console.log("is it in the operation set?: " + opsSym.includes(tempVal));
     setIoRef(ioRef + tempVal.target.value)
+    console.log("can it detect from the string?: " + opsSym.includes(ioRef.slice(-1)));
   };
 
   const eqFunct = () =>{
@@ -19,13 +26,13 @@ function App() {
 
   return (
     <div className="App">
-      <p className='ioScreen' placeholder='placeholder'>{ioRef}</p>
+      <p className='ioScreen' placeholder='placeholder'>{ioRef || 0}</p>
       <div className='buttonSet'>
         <div className='firstRow'>
           <button onClick={clearIo}>C</button>
-          <button value='/' onClick={inputSet}>/</button>
-          <button value='*'onClick={inputSet}>X</button>
-          <button value='-'onClick={inputSet}>-</button>
+          <button value="/" onClick={inputSet}>/</button>
+          <button value="*"onClick={inputSet}>X</button>
+          <button value="-"onClick={inputSet}>-</button>
         </div>
         <div className='secondRow'>
           <button value="7" onClick={inputSet}>7</button>
