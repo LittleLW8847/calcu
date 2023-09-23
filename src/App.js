@@ -5,16 +5,24 @@ function App() {
 
   const [ioRef, setIoRef] = useState(""); //input output
   
-  const inputSet = (tempVal) => {
+  const inputSet = (tempVal) => {//for read input from button
     setIoRef(ioRef + tempVal.target.value)
   };
+
+  const eqFunct = () =>{
+    setIoRef(eval(ioRef));
+  }
+
+  const clearIo = () => {
+    setIoRef("");
+  }
 
   return (
     <div className="App">
       <p className='ioScreen' placeholder='placeholder'>{ioRef}</p>
       <div className='buttonSet'>
         <div className='firstRow'>
-          <button>C</button>
+          <button onClick={clearIo}>C</button>
           <button value='/' onClick={inputSet}>/</button>
           <button value='*'onClick={inputSet}>X</button>
           <button value='-'onClick={inputSet}>-</button>
@@ -36,7 +44,7 @@ function App() {
           <button value="3" onClick={inputSet}>3</button>
         </div>
         <div className='equalButton'>
-          <button>=</button>
+          <button onClick={eqFunct}>=</button>
         </div>
       </div>
     </div>
