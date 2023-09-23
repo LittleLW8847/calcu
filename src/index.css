@@ -1,0 +1,45 @@
+:root{
+    
+}
+
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.App{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.daCalc{
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    overflow: hidden;
+}
+
+.screen{
+    border: 1px solid black;
+    text-align: right;
+}
+
+.buttonSet{
+    display: grid;
+    padding-left: auto;
+    padding-right: auto;
+    grid-template-columns: repeat(4 , 1.8rem);
+}
+
+.eqButton{
+    grid-row: span 2;
+}
+
+
+
+
+    

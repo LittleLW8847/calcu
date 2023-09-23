@@ -19,6 +19,9 @@ function App() {
   };
 
   const eqFunct = () =>{
+    if(ioRef === "" || opsSym.includes(ioRef.slice(-1))){
+      return;
+    }
     setResult(eval(ioRef));
     setIoRef("");
   }
@@ -36,31 +39,29 @@ function App() {
           {ioRef || 0}
         </div>
         <div className='buttonSet'>
-          <div className='firstRow'>
-            <button onClick={clearIo}>C</button>
-            <button value="/" onClick={inputSet}>/</button>
-            <button value="*"onClick={inputSet}>X</button>
-            <button value="-"onClick={inputSet}>-</button>
-         </div>
-          <div className='secondRow'>
-            <button value="7" onClick={inputSet}>7</button>
-            <button value="8" onClick={inputSet}>8</button>
-            <button value="9" onClick={inputSet}>9</button>
-            <button value="+" onClick={inputSet}>+</button>
-         </div>
-          <div className='thirdRow'>
-           <button value="4" onClick={inputSet}>4</button>
-           <button value="5" onClick={inputSet}>5</button>
-           <button value="6" onClick={inputSet}>6</button>
-         </div>
-         <div className='forthrow'>
-           <button value="1" onClick={inputSet}>1</button>
-           <button value="2" onClick={inputSet}>2</button>
-           <button value="3" onClick={inputSet}>3</button>
-         </div>
-         <div className='equalButton'>
-           <button onClick={eqFunct}>=</button>
-          </div>
+          
+            <button onClick={clearIo} className='daButton'>C</button>
+            <button value="/" onClick={inputSet} className='daButton'>/</button>
+            <button value="*"onClick={inputSet} className='daButton'>X</button>
+            <button value="-"onClick={inputSet} className='daButton'>-</button>
+         
+            <button value="7" onClick={inputSet} className='daButton'>7</button>
+            <button value="8" onClick={inputSet} className='daButton'>8</button>
+            <button value="9" onClick={inputSet} className='daButton'>9</button>
+            <button value="+" onClick={inputSet} className='daButton'>+</button>
+         
+           <button value="4" onClick={inputSet} className='daButton'>4</button>
+           <button value="5" onClick={inputSet} className='daButton'>5</button>
+           <button value="6" onClick={inputSet} className='daButton'>6</button>
+           <button onClick={eqFunct} className='eqButton'>=</button>
+         
+           <button value="1" onClick={inputSet} className='daButton'>1</button>
+           <button value="2" onClick={inputSet} className='daButton'>2</button>
+           <button value="3" onClick={inputSet} className='daButton'>3</button>
+           
+
+           
+
       </div>
       </div>
 
