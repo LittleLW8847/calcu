@@ -7,11 +7,13 @@ function App() {
   const opsSym = ["+", "-", "*", "/"];
 
 
+  function objToString(){
+
+  }
   
   const inputSet = (tempVal) => {//for read input from button
-    var temp = JSON.stringify(tempVal);
-    console.log("da input: " + tempVal);
-    if(ioRef === '' && opsSym.includes({tempVal}) || opsSym.includes(ioRef.slice(-1))){//i want to limit the input of operators, but i can't get the clause to detect.
+  
+    if(ioRef === '' && opsSym.includes(tempVal.target.value) || opsSym.includes(ioRef.slice(-1))){//i want to limit the input of operators, but i can't get the clause to detect.
       return;
     }
 
