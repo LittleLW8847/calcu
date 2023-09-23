@@ -7,14 +7,15 @@ function App() {
   const opsSym = ["+", "-", "*", "/"];
   
   const inputSet = (tempVal) => {//for read input from button
-    if(/*ioRef === '' && opsSym.includes(tempVal) ||*/ opsSym.includes(ioRef.slice(-1)))/*)*/{
+    console.log("da input: " + tempVal);
+    if(/*ioRef === '' && opsSym.includes(tempVal) ||*/ opsSym.includes(ioRef.slice(-1))){//i want to limit the input of operators, but i can't get the clause to detect.
       return;
     }
 
-    console.log("is it in the operation set?: " + opsSym.includes(tempVal));
+    //console.log("is it in the operation set?: " + opsSym.includes(tempVal));
     setIoRef(ioRef + tempVal.target.value)
-    console.log("is it in the operation set?: " + opsSym.includes(tempVal));
-    console.log("can it detect from the string?: " + opsSym.includes(ioRef.slice(-1)));
+    //console.log("is it in the operation set?: " + opsSym.includes(tempVal));
+    //console.log("can it detect from the string?: " + opsSym.includes(ioRef.slice(-1)));
   };
 
   const eqFunct = () =>{
