@@ -35,7 +35,7 @@ function App() {
     <div className="App">
       <div className='daCalc'>
         <div className='screen'>
-          {calcResult? <span>({calcResult})</span>:''}
+          {calcResult > 0? <span>({calcResult})</span>:''}
           {ioRef || 0}
         </div>
         <div className='buttonSet'>
